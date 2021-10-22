@@ -18,3 +18,7 @@ h1 {
   margin: 1em;
   border: solid blue 1px;
 }
+
+#profile > section > textarea {
+  resize: none;
+}
