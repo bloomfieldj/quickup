@@ -2,6 +2,7 @@ import React from "react";
 import "./Application.scss";
 import Profile from "./Profile";
 import Registration from "./Registration";
+import Chat from "./Chat";
 export default function Application() {
   return (
 
@@ -17,10 +18,9 @@ export default function Application() {
           <span> Login </span>
         </section>
       </nav>
-      <body>
-        <Registration />
-        <Profile />
-      </body>
+      <Registration />
+      <Profile />
+      <Chat />
     </main>
   );
 }
