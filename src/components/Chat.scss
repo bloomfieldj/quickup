@@ -1,0 +1,62 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  border: solid red 1px
+}
+
+#meeting {
+  display: flex;
+  justify-content: center;
+  border: solid red 1px
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid black 1px;
+}
+
+#basics {
+  display: flex;
+  border: solid black 1px
+}
+
+#bio {
+margin: 1em;
+margin-top: 2em;
+border: solid red 1px;
+}
+
+#meeting {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  border: solid blue 1px;
+}
+
+#meeting > img {
+  border: solid red 1px;
+}
+
+#meeting > button {
+  border: solid black 1px;
+}
+
+#details {
+  display: flex;
+  justify-content: center;
+}
+
+#details > section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em;
+  border: solid blue 1px;
+}
+
+#details > section > p {
+  margin: 0.5em
+}

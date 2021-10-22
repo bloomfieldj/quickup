@@ -1,0 +1,32 @@
+#navbar {
+  width: 100;
+  display: flex;
+  border: solid black 2px;
+  justify-content: space-between;
+}
+
+#navbar_side {
+  display: flex;
+  border: solid red 2px;
+}
+
+#navbar_side > span {
+  margin: 1em;
+  border: solid blue 2px
+}
+
+#title {
+    margin: 1em;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    border: solid red 1px
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    border: solid red 1px
+  }
