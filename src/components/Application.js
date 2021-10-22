@@ -1,5 +1,6 @@
 import React from "react";
 import "./Application.scss";
+import Profile from "./Profile";
 export default function Application() {
   return (
 
@@ -15,6 +16,9 @@ export default function Application() {
           <span> Login </span>
         </section>
       </nav>
+      <body>
+        <Profile />
+      </body>
     </main>
   );
 }
