@@ -6,12 +6,30 @@ h1 {
 
 #profile {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   border: solid black 1px;
 }
 
-#profile > section {
+#basics {
+  display: flex;
+}
+
+#bio {
+margin: 1em;
+margin-top: 2em
+}
+
+#profile_pic {
+  margin: 1em
+}
+
+#details {
+  display: flex;
+  justify-content: center;
+}
+
+#details > section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,6 +37,3 @@ h1 {
   border: solid blue 1px;
 }
 
-#profile > section > textarea {
-  resize: none;
-}

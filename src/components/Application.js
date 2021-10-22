@@ -1,6 +1,7 @@
 import React from "react";
 import "./Application.scss";
 import Profile from "./Profile";
+import Registration from "./Registration";
 export default function Application() {
   return (
 
@@ -17,6 +18,7 @@ export default function Application() {
         </section>
       </nav>
       <body>
+        <Registration />
         <Profile />
       </body>
     </main>

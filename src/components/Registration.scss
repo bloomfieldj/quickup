@@ -1,0 +1,24 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  border: solid red 1px
+}
+
+#profile_creator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid black 1px;
+}
+
+#profile_creator > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1em;
+  border: solid blue 1px;
+}
+
+#profile_creator > section > textarea {
+  resize: none;
+}
