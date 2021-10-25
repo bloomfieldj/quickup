@@ -119,24 +119,26 @@ export default function Chat() {
 
   return (
     <Fragment>
-      <div className="select">
-        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-      </div>
-
-      <div className="select">
-        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
-      </div>
-
-      <div className="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
-      </div>
-
-      <video id="video" playsInline autoPlay></video>
-
       <h1> Meet Big Chungus</h1>
       <section id="meeting">
-        <img src={chungus} alt="chat_video" width="400" height="400" />
+        <section id="videos">
+          <video id="myVideo" playsInline autoPlay height="400px" width="400px"></video>
+          <img src={chungus} alt="chat_video" width="400" height="400" />
+        </section>
         <button>Extend chat by 2 minutes!</button>
+        <section id="devices">
+          <div className="select">
+            <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+          </div>
+
+          <div className="select">
+            <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+          </div>
+
+          <div className="select">
+            <label for="videoSource">Video source: </label><select id="videoSource"></select>
+          </div>
+        </section>
       </section>
       <section id='profile'>
         <section id="basics">
