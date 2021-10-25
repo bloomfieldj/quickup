@@ -9,7 +9,7 @@ import "./Chat.scss";
 import chungus from "./chungus.png"
 
 
-export default function Chat() {
+export default function Chat(props) {
 
 
   useEffect(() => {
