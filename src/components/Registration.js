@@ -5,6 +5,7 @@ export default function Registration() {
 
   return (
     <Fragment>
+    <div className="register-components">
       <h1> Create a profile</h1>
       <form id='profile_creator'>
         <section>
@@ -30,7 +31,8 @@ export default function Registration() {
           </textarea>
         </section>
       </form>
-      <button className="registerButton" type="button" class="btn btn-success">Submit</button>
+      <button className="registerButton" type="button">Submit</button>
+    </div>
     </Fragment>
   );
 }
