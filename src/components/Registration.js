@@ -8,7 +8,6 @@ export default function Registration() {
   return (
     <Fragment>
       <h1> Create a profile</h1>
-      <h2> Tell us about yourself!</h2>
       <form id='profile_creator'>
         <section>
           <input type="text" className='profile_entry' name="first_name" placeholder="First Name" />
@@ -29,11 +28,11 @@ export default function Registration() {
           <input type="text" className='profile_entry' name="job" placeholder="Occupation" />
         </section>
         <section>
-          <textarea name="bio" className="profile_entry" rows="6" cols="50" placeholder="... I'm just a a Pam looking for my Jim. My hobbies include Netflix, UberEats and drowning my existential dread in Nutella. Looking for someone who will treat me like the royalty I am. Must be 6'2 or taller and make 150k+ or don't even bother...">
+          <textarea name="bio" className="profile_entry" rows="6" cols="50" placeholder="Tell us about yourself...">
           </textarea>
         </section>
       </form>
-      <button className="registerButton" type="button" class="btn btn-success">Success</button>
+      <button className="registerButton" type="button" class="btn btn-success">Submit</button>
     </Fragment>
   );
 }
