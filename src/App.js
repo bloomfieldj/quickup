@@ -1,17 +1,8 @@
 import './App.css';
-import axios from 'axios';
-import { useEffect } from 'react';
 
 function App() {
-  
-  useEffect(() => {
-    axios.get('http://localhost:3000/')
-    .then(res => console.log(res))
-  }, [])
 
   return (
-
-
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
