@@ -1,0 +1,23 @@
+.greeting{
+  font-size: 1.5em;
+}
+
+.welcome{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login, .register{
+  background-color: #54ca9b;
+  padding: 7px 15px;
+  font-size: 1em;
+  margin-left: 7.5px; 
+  margin-right: 7.5px;
+  border-radius: 8px;
+}
+
+.login:hover, .register:hover{
+  background-color: whitesmoke;
+  color: #54ca9b;
+}
