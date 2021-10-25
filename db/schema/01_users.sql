@@ -10,8 +10,9 @@ CREATE TABLE users (
   age SMALLINT NOT NULL,
   gender VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  -- password VARCHAR(255) NOT NULL,
-  phone VARCHAR(20) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
   city VARCHAR(255) NOT NULL, 
-  occupation VARCHAR(255) NOT NULL, 
+  occupation VARCHAR(255) NOT NULL,
+  bio TEXT
 );

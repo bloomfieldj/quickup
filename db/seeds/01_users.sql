@@ -14,4 +14,4 @@
     INSERT INTO users (
     first_name, last_name, age, gender, email, password, phone, city, occupation, bio)
     VALUES (
-    'Dale', 'Coleman', 22, 'male', 'daleybuddysir@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14165450015', 'Waterloo', 'Sales lead', "Tell me your favorite ice cream flavor and I'll tell you why you're wrong");
+    'Dale', 'Coleman', 22, 'male', 'daleybuddysir@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14165450015', 'Waterloo', 'Sales lead', "Tell me your favorite ice cream flavor");
