@@ -1,7 +1,6 @@
 h1 {
   display: flex;
   justify-content: center;
-  border: solid red 1px
 }
 
 #profile_creator {
@@ -17,12 +16,43 @@ h1 {
   justify-content: flex-start;
   margin: 1em;
   border: solid blue 1px;
+  border-radius: 3px;
 }
 
 #profile_creator > section > textarea {
   resize: none;
 }
 
-.registerButton {
-  background-color: greenyellow;
-}
+.registerButton{
+  background-color: #54ca9b;
+  padding: 7px 15px;
+  font-size: 1em;
+  margin-left: 7.5px; 
+  margin-right: 7.5px;
+  border-radius: 8px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 10px;
+  
+  .registerButton:hover{
+    background-color: whitesmoke;
+    color: #54ca9b;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  }
+
+  .register-components{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+    
+    #gender{
+      height: 30px;
+      border-radius: 5px; 
+    }

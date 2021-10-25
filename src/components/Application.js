@@ -10,7 +10,6 @@ import chungus from "./chungus.png";
 import Login from "./Login";
 
 
-
 const person = {
   "first_name": 'Jane',
   "last_name": 'Doe',

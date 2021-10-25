@@ -1,0 +1,39 @@
+h2{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.submit-btn{
+  background-color: #54ca9b;
+  padding: 7px 15px;
+  font-size: 1em;
+  margin-left: 7.5px; 
+  margin-right: 7.5px;
+  border-radius: 8px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.submit-btn:hover{
+  background-color: whitesmoke;
+  color: #54ca9b;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-fields{
+  margin: 15px;
+}
+
+.email-input, .password-input{
+  margin: 15px;
+  width: 15em;
+  height: 2.5em;
+  border-radius: 5px;
+}
+::placeholder{
+  font-size: 1rem;
+}
