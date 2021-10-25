@@ -8,12 +8,10 @@
 
 #navbar_side {
   display: flex;
-  border: solid red 2px;
 }
 
 #navbar_side > span {
   margin: 1em;
-  border: solid blue 2px
 }
 
 #title {
@@ -23,7 +21,6 @@
   h1 {
     display: flex;
     justify-content: center;
-    border: solid red 1px
   }
 
   h2 {
