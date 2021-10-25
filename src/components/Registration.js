@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import "./Registration.scss";
+import "../styles/Registration.scss"
+
 
 export default function Registration() {
 

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import "./Profile.scss";
+import "../styles/Profile.scss";
 import { promiseImpl } from "ejs";
 
 export default function Profile(props) {

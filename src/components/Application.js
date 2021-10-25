@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import "./Application.scss";
+import "../styles/Application.scss";
+
 import Profile from "./Profile";
 import Registration from "./Registration";
 import Chat from "./Chat";
