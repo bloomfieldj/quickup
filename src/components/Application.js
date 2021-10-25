@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import "./Application.scss";
+import "../styles/Application.scss";
+
+import chungus from "./chungus.png";
+
 import Profile from "./Profile";
 import Registration from "./Registration";
 import Chat from "./Chat";
 import Navbar from "./Navbar";
 import Welcome from "./Welcome";
-import chungus from "./chungus.png";
 import Login from "./Login";
 
 

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import './Login.scss'
+import '../styles/Login.scss'
 
 export default function Login(props){
   return(

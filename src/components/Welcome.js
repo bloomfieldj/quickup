@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import "./Welcome.scss"
+import "../styles/Welcome.scss"
 
 
 export default function Welcome(props){

@@ -4,7 +4,7 @@ import React, { Fragment, useEffect } from "react";
 import adapter from 'webrtc-adapter';
 import Timer from "./Timer"
 
-import "./Chat.scss";
+import "../styles/Chat.scss";
 
 import chungus from "./chungus.png"
 

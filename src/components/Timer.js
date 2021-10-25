@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
+import '../styles/Timer.scss';
 
 
 
