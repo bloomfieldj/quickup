@@ -6,21 +6,23 @@ export default function Profile(props) {
   return (
     <Fragment>
       <h1> My profile</h1>
-      <section id="basics">
-        <img id="profile_pic" src={props.profile.photo} alt="profile-pic" width="100" height="100" />
-        <p id="bio">
-          {props.profile.bio}
-        </p>
-      </section>
       <section id='profile'>
+
+        <img id="profile_pic" src={props.profile.photo} alt="profile-pic" width="100" height="100" />
+        
+  
         <section id="details">
-          <section>
-            <p>{props.profile.first_name}</p>
-            <p>{props.profile.last_name}</p>
-            <p>{props.profile.age}</p>
-            <p>{props.profile.gender}</p>
+          <section className='profile-section1'>
+            <div>
+            <h2>{props.profile.first_name}</h2>
+            <h2>{props.profile.last_name}</h2>
+            </div>
+            <div>
+            <h2>{props.profile.age}</h2>
+            <h2>{props.profile.gender}</h2>
+            </div>
           </section>
-          <section>
+          <section className='profile-section2'>
             <p>{props.profile.city}</p>
             <p>{props.profile.phone_number}</p>
             <p>{props.profile.email}</p>
@@ -28,6 +30,9 @@ export default function Profile(props) {
           </section>
         </section>
       </section>
+      <p id="bio">
+          {props.profile.bio}
+        </p>
     </Fragment>
   );
 }
