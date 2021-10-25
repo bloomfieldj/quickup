@@ -1,19 +1,19 @@
-'use strict';
 import React, { Fragment, useEffect } from "react";
 
 // adapter.js is a shim to insulate apps from spec changes and prefix differences in WebRTC.
 import adapter from 'webrtc-adapter';
+import Timer from "./Timer"
 
 import "./Chat.scss";
 
 import chungus from "./chungus.png"
 
 
-
 export default function Chat() {
+
+
   useEffect(() => {
     // Web Rtc sample code from https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
-
 
     const videoElement = document.querySelector('video');
     const audioInputSelect = document.querySelector('select#audioSource');
@@ -125,7 +125,7 @@ export default function Chat() {
           <video id="myVideo" playsInline autoPlay height="400px" width="400px"></video>
           <img src={chungus} alt="chat_video" width="400" height="400" />
         </section>
-        <button>Extend chat by 2 minutes!</button>
+        <Timer />
         <section id="devices">
           <div className="select">
             <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
