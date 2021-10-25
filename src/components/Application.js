@@ -18,8 +18,8 @@ export default function Application() {
           <span> Login </span>
         </section>
       </nav>
-      <Registration />
-      <Profile />
+      {/* <Registration /> */}
+      {/* <Profile /> */}
       <Chat />
     </main>
   );
