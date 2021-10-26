@@ -34,7 +34,8 @@ export default function Profile(props) {
       </section>
       <p id="bio">
           {props.profile.bio}
-        </p>
+      </p>
+      <button onClick={props.onClick}>Log Out</button>
     </Fragment>
   );
 }

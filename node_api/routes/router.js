@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
 
 const mainRouter = (db) => {
 
@@ -10,10 +11,8 @@ const mainRouter = (db) => {
       // console.log(response.rows);
       res.json(response.rows)
     })
-    .catch(err => console.error(error.message))
+    .catch(err => console.error(err.message));
   });
-
-
 
 return router;
 };

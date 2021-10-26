@@ -3,12 +3,11 @@ const PORT = 3001;
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors({
-  origins: ['http://localhost:3001/']
-}));
+app.use(cors());
 app.use(morgan('dev'));
 
 
@@ -34,8 +33,22 @@ db.connect(console.log('connected to db'))
 
 
 const router = require('./routes/router');
-//use router when fetching '/'
 app.use('/', router(db));
 
+const registerRouter = require('./routes/registerRouter');
+app.use('/register', registerRouter(db));
+
+
+app.get('/login', (req, res) => {
+  const userEmail = req.query.email
+  // console.log('req.query.email', userEmail)
+
+  db.query(`SELECT * FROM users WHERE email = '${userEmail}';`)
+  .then((response) => {
+    console.log(response.rows);
+    res.json(response.rows)
+  })
+  .catch(err => console.error(err.message)) 
+});
 
 app.listen(PORT, console.log(`server listening on port ${PORT}`))
