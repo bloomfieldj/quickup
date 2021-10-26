@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
 import "../styles/Registration.scss"
 
 
-export default function Registration() {
+export default function Registration(props) {
 
   return (
     <Fragment>
@@ -32,7 +33,7 @@ export default function Registration() {
           </textarea>
         </section>
       </form>
-      <button className="registerButton" type="button">Submit</button>
+      <button onClick={props.onClick}className="registerButton" type="button">Submit</button>
     </div>
     </Fragment>
   );
