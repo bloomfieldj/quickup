@@ -36,3 +36,17 @@ section {
     display: flex;
     justify-content: center;
   }
+
+  main {
+    height: 100%;
+    padding: 0 5%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background-color: #f4f1ec;
+    border-bottom: 3px #545149;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
