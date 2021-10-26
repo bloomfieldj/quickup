@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+
+import Application from "./components/Application";
+import { ContextProvider } from "./SocketContext";
+
 import "./index.scss";
 
-import Application from "./components/Application"
+ReactDOM.render(
+ <ContextProvider>    
+  <Application />, document.getElementById("root")
+</ContextProvider>
 
-ReactDOM.render(<Application />, document.getElementById("root"));
+);
