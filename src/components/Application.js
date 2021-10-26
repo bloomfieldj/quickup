@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "../styles/Application.scss";
 
-import chungus from "./chungus.png";
-
 import Profile from "./Profile";
 import Registration from "./Registration";
 import Chat from "./Chat";
@@ -12,22 +10,9 @@ import Welcome from "./Welcome";
 import Login from "./Login";
 
 
-const person = {
-  "first_name": 'Jane',
-  "last_name": 'Doe',
-  "age": 27,
-  "gender": "Female",
-  "city": "San Francisco",
-  "phone_number": "1234567",
-  "email": "jane@doe.com",
-  "occupation": "Nurse",
-  "bio": "I'm just a a Pam looking for my Jim. My hobbies include Netflix, UberEats and drowning my existential dread in Nutella. Looking for someone who will treat me like the royalty I am. Must be 6'2 or taller and make 150k+ or don't even bother.",
-  "photo": chungus
-}
-
-
 export default function Application() {
   const [transition, setTransition] = useState("welcome");
+  const [user, setUser] = useState(null);
 
   const registration = () => {
     setTransition("register") 
@@ -44,7 +29,10 @@ export default function Application() {
 
   useEffect(() => {
     axios.get('http://localhost:3001/')
-    .then(res => console.log(res))
+    .then(res => {
+      console.log(res)
+      setUser(res.data[0]);
+    })
   }, [])
 
   return (
@@ -54,8 +42,8 @@ export default function Application() {
       {transition === "welcome" && <Welcome onClick1={login} onClick2={registration}/>} 
       {transition === "register" && <Registration/>} 
       {transition === "login" && <Login/>} 
-      {transition === "profile" && <Profile profile={person}/>}
-      {transition === "chat" &&<Chat profile={person}/>}
+      {transition === "profile" && <Profile profile={user}/>}
+      {transition === "chat" &&<Chat profile={user}/>}
     </main>
   );
 }

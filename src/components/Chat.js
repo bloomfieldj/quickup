@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 
 // adapter.js is a shim to insulate apps from spec changes and prefix differences in WebRTC.
-import adapter from 'webrtc-adapter';
+// import adapter from 'webrtc-adapter';
 import Timer from "./Timer"
 
 import "../styles/Chat.scss";
@@ -156,7 +156,7 @@ export default function Chat(props) {
           </section>
           <section>
             <p>{props.profile.city}</p>
-            <p>{props.profile.phone_number}</p>
+            <p>{props.profile.phone}</p>
             <p>{props.profile.email}</p>
             <p>{props.profile.occupation}</p>
           </section>
