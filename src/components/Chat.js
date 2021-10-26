@@ -11,6 +11,7 @@ const socket = io.connect('http://localhost:5000')
 
 export default function Chat(props) {
   const [myID, setMyID] = useState("");
+
   useEffect(() => {
     setMyID(socket.id);
 
