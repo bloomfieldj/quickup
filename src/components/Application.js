@@ -8,6 +8,7 @@ import Chat from "./Chat";
 import Navbar from "./Navbar";
 import Welcome from "./Welcome";
 import Login from "./Login";
+import Session from "./Session";
 
 
 export default function Application() {
@@ -26,6 +27,12 @@ export default function Application() {
   const chat = () => {
     setTransition("chat")
   }
+  const session = () => {
+    setTransition("session")
+  }
+  const verifyUser = () => {
+    setTransition("profile")
+  }
 
   useEffect(() => {
     axios.get('http://localhost:3001/')
@@ -38,12 +45,14 @@ export default function Application() {
   return (
 
     <main className="layout">
-      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={chat}/>
+      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={session}/>
       {transition === "welcome" && <Welcome onClick1={login} onClick2={registration}/>} 
-      {transition === "register" && <Registration/>} 
-      {transition === "login" && <Login/>} 
+      {transition === "register" && <Registration onClick={profile}/>} 
+      {transition === "login" && <Login onClick={verifyUser}/>} 
       {transition === "profile" && <Profile profile={user}/>}
       {transition === "chat" &&<Chat profile={user}/>}
+      {transition === "session" &&<Session onClick={chat}/>}
+
     </main>
   );
 }

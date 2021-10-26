@@ -10,7 +10,7 @@ export default function Login(props){
         <input className="email-input" name="email" type="text" placeholder={"Enter Your Email Address"}/>
         <input className="password-input"  name="password" type="text" placeholder={"Enter Your Password"}/>
       </form>
-      <button className="submit-btn">Submit</button>
+      <button onClick={props.onClick} className="submit-btn">Submit</button>
   </div>
     </Fragment>
   )
