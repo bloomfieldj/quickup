@@ -2,8 +2,14 @@
 #navbar {
   width: 100;
   display: flex;
-  border: solid black 2px;
+  border: none;
   justify-content: space-between;
+  background-color: #ff4848;
+  color: white;
+}
+
+section {
+  border: none;
 }
 
 #navbar_side {

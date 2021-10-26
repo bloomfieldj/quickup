@@ -15,10 +15,10 @@ export default function Application() {
   const [user, setUser] = useState(null);
 
   const registration = () => {
-    setTransition("register") 
+    setTransition("register")
   }
   const login = () => {
-    setTransition("login") 
+    setTransition("login")
   }
   const profile = () => {
     setTransition("profile")

@@ -1,21 +1,23 @@
-import React, { Fragment, useEffect } from "react";
-
-// adapter.js is a shim to insulate apps from spec changes and prefix differences in WebRTC.
-// import adapter from 'webrtc-adapter';
+import Peer from "simple-peer"
+import io from "socket.io-client"
+import React, { useEffect, useState, Fragment } from "react"
+import adapter from 'webrtc-adapter';
 import Timer from "./Timer"
-
 import "../styles/Chat.scss";
 
-import chungus from "./chungus.png"
 
+// adapter.js is a shim to insulate apps from spec changes and prefix differences in WebRTC.
+const socket = io.connect('http://localhost:5000')
 
 export default function Chat(props) {
-
+  const [myID, setMyID] = useState("");
 
   useEffect(() => {
-    // Web Rtc sample code from https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
+    setMyID(socket.id);
 
-    const videoElement = document.querySelector('video');
+    // Web Rtc sample code copypastad from https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
+
+    const videoElement = document.querySelector('#myVideo');
     const audioInputSelect = document.querySelector('select#audioSource');
     const audioOutputSelect = document.querySelector('select#audioOutput');
     const videoSelect = document.querySelector('select#videoSource');
@@ -119,11 +121,11 @@ export default function Chat(props) {
 
   return (
     <Fragment>
-      <h1> Meet Big Chungus</h1>
+      <h1> Meet {props.profile.first_name} {props.profile.last_name} </h1>
       <section id="meeting">
         <section id="videos">
-          <video id="myVideo" playsInline autoPlay height="400px" width="400px"></video>
-          <img src={chungus} alt="chat_video" width="400" height="400" />
+          <video id="myVideo" playsInline muted autoPlay height="400px" width="400px"></video>
+          <video id="theirVideo" playsInline autoPlay height="400px" width="400px"></video>
         </section>
         <Timer />
         <section id="devices">
@@ -144,15 +146,15 @@ export default function Chat(props) {
       <section id='profile'>
         <section id="basics">
           <p id="bio">
-          {props.profile.bio}
+            {props.profile.bio}
           </p>
         </section>
         <section id="details">
           <section>
-          <p>{props.profile.first_name}</p>
-          <p>{props.profile.last_name}</p>
-          <p>{props.profile.age}</p>
-          <p>{props.profile.gender}</p>
+            <p>{props.profile.first_name}</p>
+            <p>{props.profile.last_name}</p>
+            <p>{props.profile.age}</p>
+            <p>{props.profile.gender}</p>
           </section>
           <section>
             <p>{props.profile.city}</p>
@@ -162,7 +164,7 @@ export default function Chat(props) {
           </section>
         </section>
       </section>
-      
+
     </Fragment>
   );
 }
