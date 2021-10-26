@@ -1,18 +1,18 @@
 #navbar {
   width: 100;
   display: flex;
-  border: solid black 2px;
+  border:none;
   justify-content: space-between;
+  background-color: #FF4848;
+  color: white
 }
 
 #navbar_side {
   display: flex;
-  border: solid red 2px;
 }
 
 #navbar_side > span {
   margin: 1em;
-  border: solid blue 2px
 }
 
 #title {
