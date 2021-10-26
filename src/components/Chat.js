@@ -158,7 +158,7 @@ export default function Chat(props) {
           </section>
           <section>
             <p>{props.profile.city}</p>
-            <p>{props.profile.phone_number}</p>
+            <p>{props.profile.phone}</p>
             <p>{props.profile.email}</p>
             <p>{props.profile.occupation}</p>
           </section>
