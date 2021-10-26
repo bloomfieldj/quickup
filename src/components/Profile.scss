@@ -16,11 +16,14 @@ h1 {
 #basics {
   display: flex;
   border: none;
+  background-color: #9DDAC6
 }
 
 #bio {
 margin: 1em;
-margin-top: 2em
+margin-top: 2em;
+background-color: white;
+padding: .5em;
 }
 
 #profile_pic {
@@ -30,6 +33,8 @@ margin-top: 2em
 #details {
   display: flex;
   justify-content: center;
+  background-color: #C2FFDC;
+
 }
 
 #details > section {
@@ -37,5 +42,6 @@ margin-top: 2em
   flex-direction: row;
   justify-content: center;
   margin: 1em;
+  background-color: white;
 }
 
