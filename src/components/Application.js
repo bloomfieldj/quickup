@@ -6,7 +6,7 @@ import Chat from "./Chat";
 export default function Application() {
   return (
 
-    <main className="layout">
+    <body className="layout">
       <nav id="navbar" className="navbar">
         <section id="navbar_side">
           <span> Home </span>
@@ -18,9 +18,11 @@ export default function Application() {
           <span> Login </span>
         </section>
       </nav>
-      <Registration />
-      <Profile />
-      <Chat />
-    </main>
+      <main>
+        <Registration />
+        <Profile />
+        <Chat />
+      </main>
+    </body>
   );
 }

@@ -1,10 +1,10 @@
 #navbar {
   width: 100;
   display: flex;
-  border:none;
+  border: none;
   justify-content: space-between;
-  background-color: #FF4848;
-  color: white
+  background-color: #ff4848;
+  color: white;
 }
 
 #navbar_side {
@@ -16,17 +16,23 @@
 }
 
 #title {
-    margin: 1em;
-  }
+  margin: 1em;
+}
 
-  h1 {
-    display: flex;
-    justify-content: center;
-    border: solid red 1px
-  }
+h1 {
+  display: flex;
+  justify-content: center;
+  border: solid red 1px;
+}
 
-  h2 {
-    display: flex;
-    justify-content: center;
-    border: solid red 1px
-  }
+h2 {
+  display: flex;
+  justify-content: center;
+  border: solid red 1px;
+}
+
+main {
+  padding: 0 5%;
+  background-color: #f4f1ec;
+  border-bottom: 3px #545149;
+}
