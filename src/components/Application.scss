@@ -22,17 +22,19 @@
 h1 {
   display: flex;
   justify-content: center;
-  border: solid red 1px;
 }
 
 h2 {
   display: flex;
   justify-content: center;
-  border: solid red 1px;
 }
 
 main {
   padding: 0 5%;
-  background-color: #f4f1ec;
   border-bottom: 3px #545149;
+  background-color: white;
+}
+
+body {
+  background-color: #f4f1ec;
 }
