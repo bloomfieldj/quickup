@@ -30,10 +30,10 @@ export default function Application() {
   const [transition, setTransition] = useState("welcome");
 
   const registration = () => {
-    setTransition("register") 
+    setTransition("register")
   }
   const login = () => {
-    setTransition("login") 
+    setTransition("login")
   }
   const profile = () => {
     setTransition("profile")
@@ -44,18 +44,18 @@ export default function Application() {
 
   useEffect(() => {
     axios.get('http://localhost:3001/')
-    .then(res => console.log(res))
+      .then(res => console.log(res))
   }, [])
 
   return (
 
     <main className="layout">
-      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={chat}/>
-      {transition === "welcome" && <Welcome onClick1={login} onClick2={registration}/>} 
-      {transition === "register" && <Registration/>} 
-      {transition === "login" && <Login/>} 
-      {transition === "profile" && <Profile profile={person}/>}
-      {transition === "chat" &&<Chat profile={person}/>}
+      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={chat} />
+      {transition === "welcome" && <Welcome onClick1={login} onClick2={registration} />}
+      {transition === "register" && <Registration />}
+      {transition === "login" && <Login />}
+      {transition === "profile" && <Profile profile={person} />}
+      {transition === "chat" && <Chat profile={person} />}
     </main>
   );
 }
