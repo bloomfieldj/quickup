@@ -1,14 +1,16 @@
 h1 {
   display: flex;
   justify-content: center;
-  border: solid red 1px
+  color: white;
 }
 
+h2 {
+  color: white;
+}
 #profile_creator {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: solid black 1px;
 }
 
 #profile_creator > section {
@@ -16,9 +18,14 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   margin: 1em;
-  border: solid blue 1px;
 }
 
 #profile_creator > section > textarea {
   resize: none;
+}
+
+.profile {
+  // margin: 0 10%;
+  background-color: #9DDAC6;
+  padding-top: .1em;
 }
