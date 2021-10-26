@@ -1,0 +1,31 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+#profile_creator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#profile_creator > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1em;
+}
+
+#profile_creator > section > textarea {
+  resize: none;
+}
+
+.profile {
+  // margin: 0 10%;
+  background-color: #9DDAC6;
+  padding-top: .1em;
+}
