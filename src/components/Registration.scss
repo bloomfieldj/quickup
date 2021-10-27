@@ -26,6 +26,20 @@ h2 {
 
 .profile {
   // margin: 0 10%;
-  background-color: #9DDAC6;
-  padding-top: .1em;
+  background-color: #9ddac6;
+  padding-top: 0.1em;
+}
+
+//////////////////
+
+option {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+  &:hover {
+    background-color: #d2ddf3;
+  }
 }

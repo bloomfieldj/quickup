@@ -8,19 +8,20 @@ export default function Profile(props) {
     <Fragment>
       <h1> My profile</h1>
       <section id='profile'>
-
-        <img id="profile_pic" src={chungus} alt="profile-pic" width="100" height="100" />
-        
-  
+        <div class="profile-body">
+          <div class="photo">
+            <img id="profile_pic" src={props.profile.photo} alt="profile-pic" width="100" height="100" />
+          </div>
+        </div>
         <section id="details">
           <section className='profile-section1'>
             <div>
-            <h2>{props.profile.first_name}</h2>
-            <h2>{props.profile.last_name}</h2>
+              <h2>{props.profile.first_name}</h2>
+              <h2>{props.profile.last_name}</h2>
             </div>
             <div>
-            <h2>{props.profile.age}</h2>
-            <h2>{props.profile.gender}</h2>
+              <h2>{props.profile.age}</h2>
+              <h2>{props.profile.gender}</h2>
             </div>
           </section>
           <section className='profile-section2'>

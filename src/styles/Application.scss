@@ -1,19 +1,76 @@
-
 #navbar {
   width: 100;
   display: flex;
   border: none;
   justify-content: space-between;
   background-color: #ff4848;
-  color: white;
 }
 
+.dropdown {
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ff4848;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropcarat {
+  color: rgb(230, 210, 159);
+
+}
+.dropdown-content div{
+  float: none;
+  background-color: #ff4848;
+  padding: 1%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content :hover {
+  background-color: rgb(158, 64, 64);
+  width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  font-family: Ubuntu;
+  font-size: 1.2em;
+  color: rgb(230, 210, 159);
+
+}
 section {
   border: none;
 }
 
 #navbar_side {
+  
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 #navbar_side > span {
@@ -21,18 +78,34 @@ section {
 }
 
 #title {
-   margin:5px;
-    font-family: Ubuntu;
-    font-size: 2em;
-    color: darkgoldenrod;
-  }
+  margin: 5px;
+  font-family: Ubuntu;
+  font-size: 2em;
+  color: rgb(230, 210, 159);
+}
 
-  h1 {
-    display: flex;
-    justify-content: center;
-  }
+h1 {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
 
-  h2 {
-    display: flex;
-    justify-content: center;
-  }
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  height: 100%;
+  padding-bottom: 5%;
+  margin: 0 5% 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #f4f1ec;
+  border-bottom: 3px #545149;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
