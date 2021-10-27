@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { SocketContext } from "./SocketContext"
-import "../styles/Chat.scss";
 
 export default function Video(props){
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
@@ -10,16 +9,16 @@ export default function Video(props){
       Video Chat
 
       {stream && (
-      <div>
+      <div className="peer-video">
       <h3>{name}</h3>
-      <video id="myVideo" playsInline muted ref={myVideo} autoPlay height="400px" width="400px"/>
+      <video id="myVideo" playsInline muted ref={myVideo} autoPlay/>
       </div>
         )}
 
       {callAccepted && !callEnded && ( 
         <div>
       <h3>{call.name}</h3>
-      <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px"/>
+      <video id="theirVideo" playsInline ref={userVideo} autoPlay />
       </div>
         )}
     </div>

@@ -3,7 +3,6 @@ import "../styles/Profile.scss";
 // import { promiseImpl } from "ejs";
 import chungus from "./chungus.png";
 
-
 export default function Profile(props) {
   return (
     <Fragment>
