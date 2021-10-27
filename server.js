@@ -14,7 +14,7 @@ const io = require("socket.io")(server, {
 
 app.use(cors());
 
-app.get("/video", (req, res) => {
+app.get("/", (req, res) => {
   res.send('server is running on port 5k')
 });
 
@@ -25,13 +25,14 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("callended");
   });
 
-  socket.on("calluser", ({userToCall, signalData, from, name}) => {
+  socket.on("calluser", ({ userToCall, signalData, from, name }) => {
     io.to(userToCall).emit("calluser", { signal: signalData, from, name });
   });
 
   socket.on("answercall", (data) => {
     io.to(data.to).emit("callaccepted", data.signal);
   });
+
 });
 
 

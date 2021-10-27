@@ -7,7 +7,8 @@ export default function Options({children}) {
   const [idToCall, setIdToCall] = useState('');
 
 
-  const handleCall = (event, idToCall) => {
+  const handleClick = (event, idToCall) => {
+    console.log('idToCall', idToCall);
     event.preventDefault();
     callUser(idToCall)
   }
@@ -25,10 +26,11 @@ export default function Options({children}) {
     <div>
       <form noValidate autoComplete="off">
         <input label="idToCall" value={idToCall} onChange={event => setIdToCall(event.target.value)}/>
+
         { callAccepted && !callEnded ? (
           <button onClick={leaveCall}>End Call</button>
         ) : (
-          <button onClick={handleCall}> Make a Call</button>
+          <button onClick={(event) => handleClick(event, idToCall)}> Make a Call</button>
         )}
         </form>
           {children}
