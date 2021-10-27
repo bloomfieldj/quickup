@@ -14,18 +14,20 @@ const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false)
   const [callEnded, setCallEnded] = useState(false)
   const [name, setName] = useState('')
-  const myVideo = useRef();
+  // const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
 
   useEffect(() => {
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-      .then((currentStream) => {
-        setStream(currentStream);
-        setTimeout(() => {
-          myVideo.current.srcObject = currentStream;
-        }, 5000);
-      });
+    // navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    //   .then((currentStream) => {
+    //     setStream(currentStream);
+    //     setTimeout(() => {
+    //       myVideo.current.srcObject = currentStream;
+    //     }, 5000);
+    //   });
+
+
 
     socket.on('me', (id) => setMe(id));
 
@@ -83,7 +85,7 @@ const ContextProvider = ({ children }) => {
     <SocketContext.Provider value={{
       call,
       callAccepted,
-      myVideo,
+      // myVideo,
       userVideo,
       stream,
       name,

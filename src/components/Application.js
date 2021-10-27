@@ -15,6 +15,7 @@ import { ContextProvider } from "./SocketContext";
 import Notifications from "./Notifications";
 import Peer from "./Peer";
 import Setup from "./Setup"
+import Timer from "./Timer";
 
 
 export default function Application() {
@@ -74,7 +75,7 @@ export default function Application() {
   return (
 
     <main className="layout">
-      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={setup} />
+      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={chat} />
       {transition === "welcome" && <Welcome onClick1={login} onClick2={registration} />}
       {transition === "register" && <Registration onClick={profile} />}
       {transition === "login" && <Login onClick={loginUser} />}
@@ -83,17 +84,19 @@ export default function Application() {
       {/* {transition === "session" && <Session onClick={chat} />} */}
       {/* {transition === "session" && <Session onClick={setup} />} */}
 
-      {transition === "setup" && <Setup />}
+      {transition === "setup" && <Setup onClick={chat} />}
       {/* {transition === "chat" && <Chat profile={user}/>} */}
       {/* {transition === "chat" && <Chat profile={user}/>} */}
-      {/* {transition === "chat" &&
+      {transition === "chat" &&
         <Fragment>
           <Video />
+          {/* <Timer /> */}
+          <button onClick={() => console.log("Clicked")}>Start Chatting</button>
           <Options>
             <Notifications />
           </Options>
         </Fragment>
-      } */}
+      }
     </main>
   );
 }

@@ -15,13 +15,16 @@ export default function Timer() {
   useEffect(() => {
 
     timeLeft > 0 && setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
-    timeLeft === 0 && console.log("Times's up!")
+
     if (timeLeft === 0 && extensionCount < 3 && extension) {
       setTimeLeft(timeLeft + 10);
       setExtensionCount(extensionCount + 1);
       setExtension(false);
     }
 
+    if (timeLeft === 0 && extension === false) {
+      console.log("Times's up!")
+    }
   })
 
   return (

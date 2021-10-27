@@ -2,7 +2,6 @@ import Peer from "simple-peer"
 import io from "socket.io-client"
 import React, { useEffect, useState, Fragment } from "react"
 import adapter from 'webrtc-adapter';
-import Timer from "./Timer"
 import "../styles/Setup.scss";
 
 
