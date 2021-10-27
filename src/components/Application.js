@@ -76,13 +76,22 @@ export default function Application() {
       onClick={loginUser}
       />} 
       {transition === "profile" && <Profile onClick={logout} profile={user}/>}
-      {transition === "chat" &&<Chat profile={user}/>}
-      {transition === "session" &&<Session onClick={chat}/>}
+      {transition === "session" && <Session onClick={chat}/>}
 
-    <Video/>
+      {transition === "chat" && 
+      <>
+      <ContextProvider>
+      <Video/>
+      <Options>
+        <Notifications/>
+      </Options>
+      <Chat profile={user}/>
+      </ContextProvider>
+      </>}
+    {/* <Video/>
     <Options>
       <Notifications/>
-    </Options>
+    </Options> */}
     </main>
   );
 }
