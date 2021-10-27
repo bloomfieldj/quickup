@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 
 
 import Application from "./components/Application";
-import { ContextProvider } from "./SocketContext";
+import { ContextProvider } from "./components/SocketContext";
 
 import "./index.scss";
 
 ReactDOM.render(
- <ContextProvider>    
-  <Application />, document.getElementById("root")
-</ContextProvider>
-
-);
+  <ContextProvider>    
+    <Application />
+  </ContextProvider>, 
+  document.getElementById("root")
+  );

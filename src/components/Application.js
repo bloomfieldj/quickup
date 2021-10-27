@@ -9,6 +9,10 @@ import Navbar from "./Navbar";
 import Welcome from "./Welcome";
 import Login from "./Login";
 import Session from "./Session";
+import Video from "./Video";
+import Options from "./Options";
+import { ContextProvider } from "./SocketContext";
+import Notifications from "./Notifications";
 
 
 export default function Application() {
@@ -75,6 +79,10 @@ export default function Application() {
       {transition === "chat" &&<Chat profile={user}/>}
       {transition === "session" &&<Session onClick={chat}/>}
 
+    <Video/>
+    <Options>
+      <Notifications/>
+    </Options>
     </main>
   );
 }

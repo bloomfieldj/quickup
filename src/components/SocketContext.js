@@ -1,5 +1,5 @@
 import { createContext, useState, useRef, useEffect } from "react";
-import {io} from "socket.io-client";
+import { io } from "socket.io-client";
 import Peer from 'simple-peer';
 
 const SocketContext = createContext();
@@ -31,7 +31,7 @@ const ContextProvider = ({ children }) => {
     });
   }, []);
 
-  const answercall = () => {
+  const answerCall = () => {
     setCallAccepted(true)
 
     const peer = new Peer({ initiator: false, trickle: false, stream });
