@@ -1,7 +1,7 @@
 import { Fragment, useContext, useEffect } from "react"
 import { SocketContext } from "./SocketContext"
 
-export default function Video(props) {
+export default function MyVideo(props) {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
 
   useEffect(() => {
@@ -113,39 +113,13 @@ export default function Video(props) {
 
   return (
     <Fragment>
-      <section id="meeting">
-        <section id="videos" className="peer-video">
-          <video id="myVideo" playsInline muted autoPlay height="400px" width="400px"></video>
-          <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px" />
-        </section>
-        <section id="devices">
-          <div className="select">
-            <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-          </div>
-
-          <div className="select">
-            <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
-          </div>
-
-          <div className="select">
-            <label for="videoSource">Video source: </label><select id="videoSource"></select>
-          </div>
-        </section>
-      </section>
-
-      {/* {stream && (
-        <div className="peer-video">
-          <h3>{name}</h3>
-          <video id="myVideo" playsInline ref={myVideo} autoPlay height="400px" width="400px" />
-        </div>
-      )} */}
-
       {callAccepted && !callEnded && (
         <div>
           <h3>{call.name}</h3>
           <video id="theirVideo" playsInline ref={userVideo} autoPlay />
         </div>
       )}
+
     </Fragment>
   )
 }

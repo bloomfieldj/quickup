@@ -16,6 +16,8 @@ import Notifications from "./Notifications";
 import Peer from "./Peer";
 import Setup from "./Setup"
 import Timer from "./Timer";
+import MyVideo from "./MyVideo"
+import PartnerVideo from "./PartnerVideo"
 
 
 export default function Application() {
@@ -43,6 +45,9 @@ export default function Application() {
   }
   const chat = () => {
     setTransition("chat")
+  }
+  const chatting = () => {
+    setTransition("chatting")
   }
   const setup = () => {
     setTransition("setup")
@@ -89,9 +94,14 @@ export default function Application() {
       {/* {transition === "chat" && <Chat profile={user}/>} */}
       {transition === "chat" &&
         <Fragment>
-          <Video />
-          {/* <Timer /> */}
-          <button onClick={() => console.log("Clicked")}>Start Chatting</button>
+          <MyVideo />
+          <button onClick={chatting}>Start Chatting</button>
+        </Fragment>
+      }
+      {transition === "chatting" &&
+        <Fragment>
+          <MyVideo />
+          <PartnerVideo />
           <Options>
             <Notifications />
           </Options>
