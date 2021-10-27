@@ -3,17 +3,17 @@ import io from "socket.io-client"
 import React, { useEffect, useState, Fragment } from "react"
 import adapter from 'webrtc-adapter';
 import Timer from "./Timer"
-import "../styles/Chat.scss";
+import "../styles/Setup.scss";
 
 
 // adapter.js is a shim to insulate apps from spec changes and prefix differences in WebRTC.
-const socket = io.connect('http://localhost:5000')
+// const socket = io.connect('http://localhost:5000')
 
-export default function Chat(props) {
-  const [myID, setMyID] = useState("");
+export default function Setup(props) {
+  // const [myID, setMyID] = useState("");
 
   useEffect(() => {
-    setMyID(socket.id);
+    // setMyID(socket.id);
 
     // Web Rtc sample code copypastad from https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
 
@@ -121,13 +121,11 @@ export default function Chat(props) {
 
   return (
     <Fragment>
-      <h1> Meet {props.profile.first_name} {props.profile.last_name} </h1>
+      <h1> Make sure you look and sound good! </h1>
       <section id="meeting">
         <section id="videos">
-          {/* <video id="myVideo" playsInline muted autoPlay height="400px" width="400px"></video> */}
-          {/* <video id="theirVideo" playsInline autoPlay height="400px" width="400px"></video> */}
+          <video id="myVideo" playsInline autoPlay height="400px" width="400px"></video>
         </section>
-        <Timer />
         <section id="devices">
           <div className="select">
             <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
@@ -141,30 +139,8 @@ export default function Chat(props) {
             <label for="videoSource">Video source: </label><select id="videoSource"></select>
           </div>
         </section>
+        <button onClick={props.onClick}>Start Chatting</button>
       </section>
-
-      <section id='profile'>
-        <section id="basics">
-          {/* <p id="bio">
-            {props.profile.bio}
-          </p> */}
-        </section>
-        <section id="details">
-          {/* <section>
-            <p>{props.profile.first_name}</p>
-            <p>{props.profile.last_name}</p>
-            <p>{props.profile.age}</p>
-            <p>{props.profile.gender}</p>
-          </section>
-          <section>
-            <p>{props.profile.city}</p>
-            <p>{props.profile.phone}</p>
-            <p>{props.profile.email}</p>
-            <p>{props.profile.occupation}</p>
-          </section> */}
-        </section>
-      </section>
-
     </Fragment>
   );
 }

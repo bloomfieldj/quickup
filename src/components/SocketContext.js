@@ -1,6 +1,7 @@
-import { createContext, useState, useRef, useEffect } from "react";
+import { createContext, useState, useRef, useEffect, Fragment } from "react";
 import { io } from "socket.io-client";
 import Peer from 'simple-peer';
+import Timer from "./Timer";
 
 const SocketContext = createContext();
 
@@ -19,17 +20,17 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-    .then((currentStream) => {
-      setStream(currentStream);
-      setTimeout(() => {
-      myVideo.current.srcObject = currentStream;  
-      }, 5000);
-    });
+      .then((currentStream) => {
+        setStream(currentStream);
+        setTimeout(() => {
+          myVideo.current.srcObject = currentStream;
+        }, 5000);
+      });
 
     socket.on('me', (id) => setMe(id));
 
     socket.on('calluser', ({ from, name: callerName, signal }) => {
-        setCall({ isReceivedCall: true, from, name: callerName, signal})
+      setCall({ isReceivedCall: true, from, name: callerName, signal })
     });
   }, []);
 
@@ -45,7 +46,7 @@ const ContextProvider = ({ children }) => {
     peer.on('stream', (currentStream) => {
       userVideo.current.srcObject = currentStream;
     });
-    
+
     peer.signal(call.signal);
 
     connectionRef.current = peer;
@@ -74,7 +75,7 @@ const ContextProvider = ({ children }) => {
     setCallEnded(true);
     connectionRef.current.destroy();
 
-  // allows user to make another call after call ended
+    // allows user to make another call after call ended
     window.location.reload();
   }
 
