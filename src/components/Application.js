@@ -50,7 +50,6 @@ export default function Application() {
   }
   const loginUser = (email) => {
     // console.log('pass down', email)
-
     axios.get('http://localhost:3001/login', {params: {email: email}})
     .then(res => {
       console.log('res.data from login', res.data[0])

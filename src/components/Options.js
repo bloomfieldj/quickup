@@ -12,6 +12,15 @@ export default function Options({children}) {
     event.preventDefault();
     callUser(idToCall)
   }
+
+  const chatIdentifier = (event) => {
+    event.preventDefault();
+    callUser(me)
+    // console.log(me);
+
+    // axios.post('http://localhost:3001/chat_id', {params: {chat_id: me}})
+    // .then(() => )
+  }
   
   return(
     <>
@@ -21,6 +30,7 @@ export default function Options({children}) {
       <CopyToClipboard text={me}>
         <button onClick={(event) => event.preventDefault()}>Copy Personal Chat ID</button>    
       </CopyToClipboard>
+      <button onClick={(event) => chatIdentifier(event)}>Start Chatting</button>
       </form>
     </div>
     <div>
