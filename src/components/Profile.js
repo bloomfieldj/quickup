@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import "../styles/Profile.scss";
-import { promiseImpl } from "ejs";
+// import { promiseImpl } from "ejs";
+import chungus from "./chungus.png";
+
 
 export default function Profile(props) {
   return (
@@ -25,18 +27,16 @@ export default function Profile(props) {
           </section>
           <section className='profile-section2'>
             <p>{props.profile.city}</p>
-            <p>{props.profile.phone_number}</p>
+            <p>{props.profile.phone}</p>
             <p>{props.profile.email}</p>
             <p>{props.profile.occupation}</p>
           </section>
         </section>
       </section>
       <p id="bio">
-        {props.profile.bio}
+          {props.profile.bio}
       </p>
-
-
-
+      <button onClick={props.onClick}>Log Out</button>
     </Fragment>
   );
 }

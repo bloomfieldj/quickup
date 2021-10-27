@@ -1,10 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
 
-const fakeData = ['Hello', 'World', 'Im', 'Here'];
+const mainRouter = (db) => {
 
-router.get('/', (req, res) => {
-  res.json(fakeData);
-});
+  router.get('/', (req, res) => {
 
-module.exports = router;
+    db.query(`SELECT * FROM users;`)
+    .then((response) => {
+      // console.log(response.rows);
+      res.json(response.rows)
+    })
+    .catch(err => console.error(err.message));
+  });
+
+return router;
+};
+
+module.exports = mainRouter;
