@@ -23,7 +23,6 @@ export default function Timer(props) {
     }
     if (timeLeft === 0 && extension === false) {
       props.end();
-      // props.leaveCall();
     }
 
   })
