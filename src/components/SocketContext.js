@@ -23,7 +23,7 @@ const ContextProvider = ({ children }) => {
       setStream(currentStream);
       setTimeout(() => {
       myVideo.current.srcObject = currentStream;  
-      }, 3000);
+      }, 5000);
     });
 
     socket.on('me', (id) => setMe(id));
