@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import axios from 'axios';
 import "../styles/Application.scss";
 
@@ -9,6 +9,11 @@ import Navbar from "./Navbar";
 import Welcome from "./Welcome";
 import Login from "./Login";
 import Session from "./Session";
+import Video from "./Video";
+import Options from "./Options";
+import { ContextProvider } from "./SocketContext";
+import Notifications from "./Notifications";
+import Peer from "./Peer";
 
 
 export default function Application() {
@@ -68,13 +73,19 @@ export default function Application() {
       <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={session}/>
       {transition === "welcome" && <Welcome onClick1={login} onClick2={registration}/>} 
       {transition === "register" && <Registration onClick={profile}/>} 
-      {transition === "login" && <Login 
-      onClick={loginUser}
-      />} 
+      {transition === "login" && <Login onClick={loginUser} />} 
       {transition === "profile" && <Profile onClick={logout} profile={user}/>}
-      {transition === "chat" &&<Chat profile={user}/>}
-      {transition === "session" &&<Session onClick={chat}/>}
-
+      {transition === "session" && <Session onClick={chat}/>}
+      {/* {transition === "chat" && <Chat profile={user}/>} */}
+      {/* {transition === "chat" && <Chat profile={user}/>} */}
+  {transition === "chat" && 
+    <Fragment>
+    <Video/>
+    <Options>
+      <Notifications/>
+    </Options>
+    </Fragment>
+  }
     </main>
   );
 }

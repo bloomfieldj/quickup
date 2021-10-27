@@ -124,8 +124,8 @@ export default function Chat(props) {
       <h1> Meet {props.profile.first_name} {props.profile.last_name} </h1>
       <section id="meeting">
         <section id="videos">
-          <video id="myVideo" playsInline muted autoPlay height="400px" width="400px"></video>
-          <video id="theirVideo" playsInline autoPlay height="400px" width="400px"></video>
+          {/* <video id="myVideo" playsInline muted autoPlay height="400px" width="400px"></video> */}
+          {/* <video id="theirVideo" playsInline autoPlay height="400px" width="400px"></video> */}
         </section>
         <Timer />
         <section id="devices">
