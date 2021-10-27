@@ -11,9 +11,9 @@ export default function Navbar(props) {
             <span id="title"><strong>QuickUp</strong></span><div class="dropcarat"><FontAwesomeIcon icon={faChevronDown} /></div>
           </button>
           <div class="dropdown-content">
-           <button> How It Works </button>
-            <button onClick={props.onClick3}>Your Profile</button>
-            <button onClick={props.onClick4}>Visit Chat Room</button>
+           <div><button> How It Works </button></div>
+           <div><button onClick={props.onClick3}>Your Profile</button></div>
+           <div><button onClick={props.onClick4}>Visit Chat Room</button></div>
           </div>
         </section>
 
