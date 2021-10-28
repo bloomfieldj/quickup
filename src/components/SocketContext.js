@@ -20,9 +20,7 @@ const ContextProvider = ({ children }, props) => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
-        setTimeout(() => {
-          myVideo.current.srcObject = currentStream;
-        }, 5000);
+        myVideo.current.srcObject = currentStream;
       });
   }
 
@@ -30,7 +28,6 @@ const ContextProvider = ({ children }, props) => {
 
     socket.on('me', (id) => {
       setMe(id);
-      // showVideo();
     });
 
     socket.on('calluser', ({ from, name: callerName, signal }) => {
@@ -78,9 +75,14 @@ const ContextProvider = ({ children }, props) => {
   const leaveCall = () => {
     setCallEnded(true);
     connectionRef.current.destroy();
-
+    //resets state to enable next call
+    setCall({});
+    setCallAccepted(false);
+    setCallEnded(false);
+    setName('');
     // allows user to make another call after call ended
-    window.location.reload();
+    //takes us back to the homepage, commented out for now
+    // window.location.reload();
   }
 
   return (

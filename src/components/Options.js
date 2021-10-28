@@ -5,6 +5,13 @@ import Timer from "./Timer";
 
 export default function Options({ children }) {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
+  const [timeLeft, setTimeLeft] = useState(1000);
+  const [extension, setExtension] = useState(false);
+  const [extensionCount, setExtensionCount] = useState(0);
+  const extend = function () {
+    setExtension(true);
+  }
+
   // calls yourself for now
   const [idToCall, setIdToCall] = useState(me);
 
@@ -20,7 +27,7 @@ export default function Options({ children }) {
         {callAccepted && !callEnded ? (
           <Fragment>
             <p>Enjoy your call!</p>
-            <Timer end={leaveCall} />
+            <Timer endCall={leaveCall} />
           </Fragment>
         ) : (
           <button onClick={(event) => handleClick(event, idToCall)}> Start Chatting!</button>

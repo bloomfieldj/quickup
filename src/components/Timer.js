@@ -5,7 +5,7 @@ import '../styles/Timer.scss';
 
 
 export default function Timer(props) {
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(5);
   const [extension, setExtension] = useState(false);
   const [extensionCount, setExtensionCount] = useState(0);
 
@@ -22,10 +22,10 @@ export default function Timer(props) {
       setExtension(false);
     }
     if (timeLeft === 0 && extension === false) {
-      props.end();
+      props.endCall();
     }
 
-  })
+  }, [timeLeft])
 
   return (
     <Fragment>
