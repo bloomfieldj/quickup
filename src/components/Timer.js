@@ -5,7 +5,7 @@ import '../styles/Timer.scss';
 
 
 export default function Timer(props) {
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(5);
   const [extension, setExtension] = useState(false);
   const [extensionCount, setExtensionCount] = useState(0);
 
@@ -22,7 +22,7 @@ export default function Timer(props) {
       setExtension(false);
     }
     if (timeLeft === 0 && extension === false) {
-      props.end();
+      props.endCall();
     }
 
   })
@@ -31,7 +31,7 @@ export default function Timer(props) {
     <Fragment>
       <section id="timer">
         <p>Time left: {timeLeft}</p>
-        <button onClick={extend}>Extend chat by 2 minutes!</button>
+        <button onClick={(event) => { event.preventDefault(); extend(); }}>Extend chat by 2 minutes!</button>
       </section>
     </Fragment >
   )
