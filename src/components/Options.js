@@ -2,25 +2,31 @@ import { Children, Fragment, useContext, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { SocketContext } from "./SocketContext";
 import Timer from "./Timer";
+import axios from "axios";
 
-export default function Options({ children }) {
+export default function Options(props, { children }) {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
   // calls yourself for now
-  const [idToCall, setIdToCall] = useState(me);
+  const [idToCall, setIdToCall] = useState("");
 
   const handleClick = (event, idToCall) => {
-    console.log('idToCall', idToCall);
+    // console.log('idToCall', idToCall);
     event.preventDefault();
-    callUser(idToCall)
-  }
 
-  const chatIdentifier = (event) => {
-    event.preventDefault();
-    // callUser(me)
-    // console.log(me);
+    console.log(props.user.email);
 
-    // axios.post('http://localhost:3001/chat_id', {params: {chat_id: me}})
-    // .then(() => )
+    // axios.post('http://localhost:3001/chat', {}, {params: {chat_id: me, user: props.user.email}})
+    // .then(res => console.log(res))
+    
+    //   axios.get('http://localhost:3001/call', {}, {params: {user: props.user.email}})
+    
+    // .then((res) => {
+    //   console.log('result from get id request', res);
+    // })
+   
+
+
+    // callUser(idToCall)
   }
 
   return (
