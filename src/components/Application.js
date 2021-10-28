@@ -49,9 +49,8 @@ export default function Application() {
     setTransition("profile")
   }
   const loginUser = (email) => {
-    // console.log('pass down', email)
     axios.get('http://localhost:3001/login', {params: {email: email}})
-    .then(res => {
+    .then((res) => {
       console.log('res.data from login', res.data[0])
       setUser(res.data[0]);
     })
