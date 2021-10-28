@@ -25,13 +25,13 @@ export default function Timer(props) {
       props.endCall();
     }
 
-  }, [timeLeft])
+  })
 
   return (
     <Fragment>
       <section id="timer">
         <p>Time left: {timeLeft}</p>
-        <button onClick={extend}>Extend chat by 2 minutes!</button>
+        <button onClick={(event) => { event.preventDefault(); extend(); }}>Extend chat by 2 minutes!</button>
       </section>
     </Fragment >
   )
