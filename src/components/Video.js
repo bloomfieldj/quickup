@@ -22,10 +22,10 @@ export default function Video(props) {
 
       {callAccepted && !callEnded && (
         <div>
-          <h3>{call.name}</h3>
-          <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px" />
-        </div>
-      )}
+      <h3>{call.name}</h3>
+      <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px"/>
+      </div>
+        )}
     </div>
   )
 }

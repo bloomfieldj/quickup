@@ -13,5 +13,6 @@ CREATE TABLE users (
   phone VARCHAR(20) NOT NULL,
   city VARCHAR(255) NOT NULL, 
   occupation VARCHAR(255) NOT NULL,
-  bio TEXT
+  bio TEXT,
+  chat_id VARCHAR(255)
 );

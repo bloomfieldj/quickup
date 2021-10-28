@@ -1,7 +1,6 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useContext } from "react";
 import axios from 'axios';
 import "../styles/Application.scss";
-
 import Profile from "./Profile";
 import Registration from "./Registration";
 import Chat from "./Chat";
@@ -12,6 +11,8 @@ import Session from "./Session";
 import Video from "./Video";
 import Options from "./Options";
 import { ContextProvider } from "./SocketContext";
+import { SocketContext } from "./SocketContext";
+
 import Notifications from "./Notifications";
 import Peer from "./Peer";
 
@@ -19,6 +20,7 @@ import Peer from "./Peer";
 export default function Application() {
   const [transition, setTransition] = useState("welcome");
   const [user, setUser] = useState(null);
+  const { me } = useContext(SocketContext);
 
   const registration = () => {
     setTransition("register")
@@ -39,30 +41,36 @@ export default function Application() {
     }
     setTransition("login");
   }
-  const chat = () => {
-    setTransition("chat")
-  }
+
   const session = () => {
     setTransition("session")
   }
   const verifyUser = () => {
     setTransition("profile")
   }
-  const loginUser = (email) => {
-    // console.log('pass down', email)
 
-    axios.get('http://localhost:3001/login', { params: { email: email } })
-      .then(res => {
-        console.log('res.data from login', res.data[0])
-        setUser(res.data[0]);
-      })
-      .then(() => setTransition("profile"))
+  async function chat() {
+    
+    await axios.post('http://localhost:3001/chat', {}, {params: {chat_id: me, user: user.email}})
+
+    .then(setTransition("chat"))
+  }
+
+
+  const loginUser = (email) => {
+    axios.get('http://localhost:3001/login', {params: {email: email}})
+    .then((res) => {
+      console.log('res.data from login', res.data[0])
+      setUser(res.data[0]);
+    })
+    .then(() => setTransition("profile"))
   }
 
 
   useEffect(() => {
     axios.get('http://localhost:3001/')
       .then(res => {
+        console.log(res.data);
         setUser(res.data[0]);
       })
   }, [])
@@ -78,8 +86,8 @@ export default function Application() {
       {transition === "session" && <Session onClick={chat} />}
       {transition === "chat" &&
         <Fragment>
-          <Video transition={transition} />
-          <Options>
+          <Video />
+          <Options user={user}>
             <Notifications />
           </Options>
         </Fragment>

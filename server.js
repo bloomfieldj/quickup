@@ -14,7 +14,7 @@ const io = require("socket.io")(server, {
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/video", (req, res) => {
   res.send('server is running on port 5k')
 });
 

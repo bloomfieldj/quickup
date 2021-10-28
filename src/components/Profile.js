@@ -8,9 +8,9 @@ export default function Profile(props) {
     <Fragment>
       <h1> My profile</h1>
       <section id='profile'>
-        <div class="profile-body">
-          <div class="photo">
-            <img id="profile_pic" src={props.profile.photo} alt="profile-pic" width="100" height="100" />
+        <div className="profile-body">
+          <div className="photo">
+            {/* <img id="profile_pic" src={props.profile.photo} alt="profile-pic" width="100" height="100" /> */}
           </div>
         </div>
         <section id="details">
