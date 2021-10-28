@@ -63,7 +63,7 @@ app.post('/chat', (req, res) => {
 app.get('/call', (req, res) => {
   const email = req.query.user
   db.query(`SELECT chat_id, email FROM users WHERE email != '${email}';`)
-  .then(res => console.log(res.rows))
+  .then(result => res.json(result.rows))
 })
 
 app.listen(PORT, console.log(`server listening on port ${PORT}`))
