@@ -6,7 +6,7 @@ const SocketContext = createContext();
 
 const socket = io('http://localhost:5000');
 
-const ContextProvider = ({ children }) => {
+const ContextProvider = ({ children }, props) => {
   const [stream, setStream] = useState(null);
   const [me, setMe] = useState('');
   const [call, setCall] = useState({})
@@ -16,20 +16,22 @@ const ContextProvider = ({ children }) => {
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
+  const showVideo = function () {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then((currentStream) => {
+        setStream(currentStream);
+        myVideo.current.srcObject = currentStream;
+      });
+  }
 
   useEffect(() => {
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-    .then((currentStream) => {
-      setStream(currentStream);
-      setTimeout(() => {
-      myVideo.current.srcObject = currentStream;  
-      }, 5000);
+
+    socket.on('me', (id) => {
+      setMe(id);
     });
 
-    socket.on('me', (id) => setMe(id));
-
     socket.on('calluser', ({ from, name: callerName, signal }) => {
-        setCall({ isReceivedCall: true, from, name: callerName, signal})
+      setCall({ isReceivedCall: true, from, name: callerName, signal })
     });
   }, []);
 
@@ -45,7 +47,7 @@ const ContextProvider = ({ children }) => {
     peer.on('stream', (currentStream) => {
       userVideo.current.srcObject = currentStream;
     });
-    
+
     peer.signal(call.signal);
 
     connectionRef.current = peer;
@@ -73,9 +75,14 @@ const ContextProvider = ({ children }) => {
   const leaveCall = () => {
     setCallEnded(true);
     connectionRef.current.destroy();
-
-  // allows user to make another call after call ended
-    window.location.reload();
+    //resets state to enable next call
+    setCall({});
+    setCallAccepted(false);
+    setCallEnded(false);
+    setName('');
+    // allows user to make another call after call ended
+    //takes us back to the homepage, commented out for now
+    // window.location.reload();
   }
 
   return (
@@ -91,7 +98,8 @@ const ContextProvider = ({ children }) => {
       me,
       callUser,
       leaveCall,
-      answerCall
+      answerCall,
+      showVideo
     }}>
 
       {children}

@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Options(props, { children }) {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
+
   // calls yourself for now
   const [idToCall, setIdToCall] = useState("");
 
@@ -38,7 +39,7 @@ export default function Options(props, { children }) {
         {callAccepted && !callEnded ? (
           <Fragment>
             <p>Enjoy your call!</p>
-            <Timer end={leaveCall} />
+            <Timer endCall={leaveCall} />
           </Fragment>
         ) : (
           <>
