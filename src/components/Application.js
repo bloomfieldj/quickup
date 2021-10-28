@@ -70,15 +70,15 @@ export default function Application() {
   return (
 
     <main className="layout">
-      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={session} />
+      <Navbar onClick1={login} onClick2={registration} onClick3={profile} onClick4={chat} />
       {transition === "welcome" && <Welcome onClick1={login} onClick2={registration} />}
       {transition === "register" && <Registration onClick={profile} />}
       {transition === "login" && <Login onClick={loginUser} />}
       {transition === "profile" && <Profile onClick={logout} profile={user} />}
-      {transition === "session" && <Session onClick={chat} />}
+      {/* {transition === "session" && <Session onClick={chat} />} */}
       {transition === "chat" &&
         <Fragment>
-          <Video />
+          <Video transition={transition} />
           <Options>
             <Notifications />
           </Options>

@@ -1,20 +1,24 @@
-import { useContext } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { SocketContext } from "./SocketContext"
-import Timer from "./Timer";
 
 export default function Video(props) {
-  const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
+  const { name, callAccepted, userVideo, myVideo, callEnded, stream, call, showVideo } =
+    useContext(SocketContext);
+
+  useEffect(() => {
+    showVideo()
+  }, []);
 
   return (
     <div>
       Video Chat
 
-      {stream && (
-        <div className="peer-video">
-          <h3>{name}</h3>
-          <video id="myVideo" playsInline muted ref={myVideo} autoPlay height="400px" width="400px" />
-        </div>
-      )}
+
+      <div className="peer-video">
+        {/* <h3>{name}</h3> */}
+        <video id="myVideo" playsInline muted ref={myVideo} autoPlay height="400px" width="400px" />
+      </div>
+
 
       {callAccepted && !callEnded && (
         <div>
@@ -25,4 +29,3 @@ export default function Video(props) {
     </div>
   )
 }
-
