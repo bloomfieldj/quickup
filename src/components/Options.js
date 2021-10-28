@@ -9,23 +9,18 @@ export default function Options(props, { children }) {
   // calls yourself for now
   const [idToCall, setIdToCall] = useState("");
 
-  const handleClick = (event, idToCall) => {
+  async function handleClick(event, idToCall) {
     // console.log('idToCall', idToCall);
     event.preventDefault();
 
     console.log(props.user.email);
 
-    // axios.post('http://localhost:3001/chat', {}, {params: {chat_id: me, user: props.user.email}})
-    // .then(res => console.log(res))
-    
-    //   axios.get('http://localhost:3001/call', {}, {params: {user: props.user.email}})
-    
-    // .then((res) => {
-    //   console.log('result from get id request', res);
-    // })
-   
-
-
+      await axios.get('http://localhost:3001/call', {}, {params: {user: props.user.email}}
+      ).then((res) => {
+        console.log('result from get id request', res.data);
+        return res.data;
+      })
+      
     // callUser(idToCall)
   }
 
