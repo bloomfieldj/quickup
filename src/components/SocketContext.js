@@ -16,6 +16,7 @@ const ContextProvider = ({ children }, props) => {
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
+  
   const showVideo = function () {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {

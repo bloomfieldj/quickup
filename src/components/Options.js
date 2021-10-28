@@ -29,8 +29,8 @@ export default function Options(props, { children }) {
 
   const call = (event) => {
     event.preventDefault();
-    console.log(idToCall);
-    callUser(idToCall)
+    console.log('me', me);
+    callUser(me)
   }
 
   return (
@@ -44,7 +44,7 @@ export default function Options(props, { children }) {
         ) : (
           <>
           <button onClick={(event) => handleClick(event, idToCall)}> Start Chatting!</button>
-          <button onClick={(event) => call(event)}>Call User</button>
+          <button onClick={call}>Call User</button>
           </>
         )}
       </form>
