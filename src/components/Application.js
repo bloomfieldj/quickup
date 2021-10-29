@@ -3,23 +3,23 @@ import axios from 'axios';
 import "../styles/Application.scss";
 import Profile from "./Profile";
 import Registration from "./Registration";
-// import Chat from "./Chat";
+import Chat from "./Chat";
 import Navbar from "./Navbar";
 import Welcome from "./Welcome";
 import Login from "./Login";
 import Session from "./Session";
 import Video from "./Video";
 import Options from "./Options";
-// import { ContextProvider } from "./SocketContext";
+import { ContextProvider } from "./SocketContext";
 import { SocketContext } from "./SocketContext";
 
 import Notifications from "./Notifications";
-// import Peer from "./Peer";
+import Peer from "./Peer";
 
 
 export default function Application() {
   const [transition, setTransition] = useState("welcome");
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(null);
   const { me } = useContext(SocketContext);
 
   const registration = () => {
@@ -32,7 +32,7 @@ export default function Application() {
     setTransition("login");
   }
   const logout = () => {
-    setUser('');
+    setUser(null);
     setTransition("welcome");
   }
   const profile = () => {
@@ -64,9 +64,7 @@ export default function Application() {
       setUser(res.data[0]);
       console.log(user)
     })
-    .then(() => {
-      setTransition("profile")
-    })
+    .then(() => setTransition("profile"))
   }
 
 

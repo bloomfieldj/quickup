@@ -4,7 +4,9 @@ import { SocketContext } from "./SocketContext";
 import Timer from "./Timer";
 import axios from "axios";
 
-export default function Options({ children, props }) {
+export default function Options(props) {
+
+
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
 
   // calls yourself for now
@@ -29,10 +31,10 @@ export default function Options({ children, props }) {
 
   const call = (event) => {
     event.preventDefault();
-    // console.log('me', me);
+    console.log('me', me);
     // console.log('props.user', props.user)
-    console.log('props',props);
-    // callUser(me)
+    console.log('props.user',props.user);
+    callUser(me)
   }
 
   return (
@@ -50,7 +52,7 @@ export default function Options({ children, props }) {
           </>
         )}
       </form>
-      {children}
+      {props.children}
     </Fragment>
   )
 }
