@@ -31,7 +31,7 @@ export default function Options({ children, props }) {
     event.preventDefault();
     // console.log('me', me);
     // console.log('props.user', props.user)
-    console.log('props', props);
+    console.log('props',props);
     // callUser(me)
   }
 
