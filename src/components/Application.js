@@ -45,9 +45,9 @@ export default function Application() {
   const session = () => {
     setTransition("session")
   }
-  const verifyUser = () => {
-    setTransition("profile")
-  }
+  // const verifyUser = () => {
+  //   setTransition("profile")
+  // }
 
   async function chat() {
     
@@ -62,6 +62,7 @@ export default function Application() {
     .then((res) => {
       console.log('res.data from login', res.data[0])
       setUser(res.data[0]);
+      console.log(user)
     })
     .then(() => setTransition("profile"))
   }
