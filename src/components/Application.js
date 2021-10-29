@@ -79,7 +79,7 @@ export default function Application() {
       {transition === "chat" &&
         <Fragment>
           <Video transition={transition} />
-          <Options>
+          <Options user={user}>
             <Notifications />
           </Options>
         </Fragment>
