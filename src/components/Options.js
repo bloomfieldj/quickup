@@ -8,29 +8,29 @@ export default function Options(props, { children }) {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
 
   // calls yourself for now
-  const [idToCall, setIdToCall] = useState("");
+  const [idToCall, setIdToCall] = useState(me);
 
   function handleClick(event) {
     event.preventDefault();
 
     console.log(props.user.email);
 
-    axios.get('http://localhost:3001/call', {}, {params: {user: props.user.email}}
-      ).then((res) => {
-        console.log('result from get id request', res.data);
-        return res.data;
-      }).then((data) => {
-        const nextPeer = data[1].chat_id
-        console.log('nextpeer', nextPeer)
-        setIdToCall(nextPeer);
-      })
-      // .then(() => callUser(idToCall))
+    // axios.get('http://localhost:3001/call', {}, {params: {user: props.user.email}}
+    //   ).then((res) => {
+    //     console.log('result from get id request', res.data);
+    //     return res.data;
+    //   }).then((data) => {
+    //     const nextPeer = data[1].chat_id
+    //     console.log('nextpeer', nextPeer)
+    //     setIdToCall(nextPeer);
+    //   })
+    //   .then(() => callUser(idToCall))
   }
 
   const call = (event) => {
     event.preventDefault();
     console.log('me', me);
-    callUser(me)
+    callUser(idToCall)
   }
 
   return (
