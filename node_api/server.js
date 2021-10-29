@@ -54,7 +54,6 @@ app.get('/login', (req, res) => {
 app.post('/chat', (req, res) => {
   const userId = req.query.chat_id
   const email = req.query.user
-// console.log('email', email, 'userId', userId);
 
   db.query(`UPDATE users SET chat_id = ('${userId}') WHERE email='${email}';`)
   .then(res => console.log(res))
@@ -62,8 +61,9 @@ app.post('/chat', (req, res) => {
 
 app.get('/call', (req, res) => {
   const email = req.query.user
+
   db.query(`SELECT chat_id, first_name FROM users WHERE email != '${email}';`)
   .then(result => res.json(result.rows))
-})
+});
 
 app.listen(PORT, console.log(`server listening on port ${PORT}`))
