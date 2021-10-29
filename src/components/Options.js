@@ -25,8 +25,13 @@ export default function Options(props) {
         const nextPeer = data[1].chat_id
         console.log('nextpeer', nextPeer)
         setIdToCall(nextPeer);
+        setName(data[1].first_name)
+        
       })
-      .then(() => callUser(idToCall))
+      .then(() => {
+        console.log(name)
+        callUser(idToCall)
+      })
   }
 
   const call = (event) => {

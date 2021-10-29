@@ -62,7 +62,7 @@ app.post('/chat', (req, res) => {
 
 app.get('/call', (req, res) => {
   const email = req.query.user
-  db.query(`SELECT chat_id, email FROM users WHERE email != '${email}';`)
+  db.query(`SELECT chat_id, first_name FROM users WHERE email != '${email}';`)
   .then(result => res.json(result.rows))
 })
 
