@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Options(props) {
 
 
-  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
+  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser, users, setUsers } = useContext(SocketContext);
 
   // calls yourself for now
   const [idToCall, setIdToCall] = useState(me);
@@ -21,13 +21,13 @@ export default function Options(props) {
       ).then((res) => {
         return res.data;
       }).then((data) => {
-        let peerArr = [];
 
         for(const peer of data) {
-          if(peer.first_name !== props.user.name){
-            // peerArr.push(peer.chat_id)
-            return callUser(peer.chat_id)
+          if(peer.chat_id !== me){
+            setName(peer.first_name);
+            callUser(peer.chat_id)
           }
+        
           // return peerArr;
         }
         // const nextPeer = peerArr[0]
@@ -42,14 +42,6 @@ export default function Options(props) {
       // })
   }
 
-  const call = (event) => {
-    event.preventDefault();
-    console.log('me', me);
-    // console.log('props.user', props.user)
-    console.log('props.user',props.user);
-    callUser(me)
-  }
-
   return (
     <Fragment>
       <form noValidate autoComplete="off">
@@ -60,8 +52,7 @@ export default function Options(props) {
           </Fragment>
         ) : (
           <>
-          <button onClick={(event) => handleClick(event, idToCall)}> Start Chatting!</button>
-          <button onClick={call}>Call Myself</button>
+          <button onClick={(event) => handleClick(event)}> Start Chatting!</button>
           </>
         )}
       </form>
