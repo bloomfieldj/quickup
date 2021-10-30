@@ -13,6 +13,8 @@ const ContextProvider = ({ children }, props) => {
   const [callAccepted, setCallAccepted] = useState(false)
   const [callEnded, setCallEnded] = useState(false)
   const [name, setName] = useState('')
+  const [users, setUsers] = useState({});
+
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
@@ -21,7 +23,10 @@ const ContextProvider = ({ children }, props) => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
-        myVideo.current.srcObject = currentStream;
+
+        if(myVideo.current){
+          myVideo.current.srcObject = currentStream;
+        }
       });
   }
 
@@ -30,6 +35,10 @@ const ContextProvider = ({ children }, props) => {
     socket.on('me', (id) => {
       setMe(id);
     });
+
+    socket.on('allusers', (users) => {
+      setUsers(users);
+    })
 
     socket.on('calluser', ({ from, name: callerName, signal }) => {
       setCall({ isReceivedCall: true, from, name: callerName, signal })
@@ -54,6 +63,11 @@ const ContextProvider = ({ children }, props) => {
     connectionRef.current = peer;
   }
 
+  const handleCallAccepted = (signal) => {
+    setCallAccepted(true);
+    connectionRef.current.signal(signal);
+  }
+
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
@@ -65,22 +79,27 @@ const ContextProvider = ({ children }, props) => {
       userVideo.current.srcObject = currentStream;
     });
 
+    connectionRef.current = peer;
+
     socket.on('callaccepted', (signal) => {
       setCallAccepted(true);
       peer.signal(signal);
     });
+  
 
-    connectionRef.current = peer;
   }
 
   const leaveCall = () => {
     setCallEnded(true);
     connectionRef.current.destroy();
+    socket.removeAllListeners('callaccepted');
+
     //resets state to enable next call
     setCall({});
     setCallAccepted(false);
     setCallEnded(false);
     setName('');
+    setUsers({})
     // allows user to make another call after call ended
     //takes us back to the homepage, commented out for now
     // window.location.reload();
@@ -100,7 +119,9 @@ const ContextProvider = ({ children }, props) => {
       callUser,
       leaveCall,
       answerCall,
-      showVideo
+      showVideo,
+      users,
+      setUsers
     }}>
 
       {children}

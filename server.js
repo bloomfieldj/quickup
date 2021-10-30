@@ -12,6 +12,8 @@ const io = require("socket.io")(server, {
   }
 });
 
+const users = {};
+
 app.use(cors());
 
 app.get("/video", (req, res) => {
