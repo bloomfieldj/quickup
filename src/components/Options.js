@@ -52,7 +52,7 @@ export default function Options(props) {
           </Fragment>
         ) : (
           <>
-          <button onClick={(event) => handleClick(event)}> Start Chatting!</button>
+          <div class="enter-room-cont"><button class="start-chatting" onClick={(event) => handleClick(event)}> Start Chatting!</button></div>
           </>
         )}
       </form>
