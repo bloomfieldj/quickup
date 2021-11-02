@@ -7,29 +7,161 @@ h1 {
   width: auto;
 }
 
+h2 {
+	color: white;
+	text-align: center;
+	width: 100%;
+	background-color: #E6EBEE;
+	border-radius: 25px 25px 0 0;
+	color: #393B45;
+	padding: 30px 0;
+	font-weight: 800;
+	margin: 0;
+  font-size: 25pt;
+}
+
+
+html,body {
+	background-color: #6E7889;
+	font-family: tahoma, sans-serif;
+	color: #E6EBEE;
+}
+
+.image-crop {
+	display: block;
+	position: relative;
+	background-color: #E6EBEE;
+	width: 180px;
+	height: 180px;
+	margin: 0 auto;
+	margin-top: 30px;
+	overflow: hidden;
+	border-radius: 50%;
+	box-shadow: 1px 1px 5px #cccccc;
+}
+
+.a-and-g {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.row {
+  width:49%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid rgb(102, 100, 100) 1.5pt;
+  margin-bottom: 3pt;
+  padding-top: 4pt;
+  margin-left: 1pt;
+  margin-right: 1pt;
+}
+
+
+#avatar {
+	display: inline;
+	height: 230px;
+	width: auto;
+	margin-left: -34px;
+}
+
+
+#card {
+	background-color: #201d1de5;
+	height: auto;
+	width: 400px;
+	margin: 10vh auto;
+	border-radius: 25px;
+	padding: 3px;
+	box-shadow: 5px 5px 5px #3b3131;
+}
+
 #profile {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-#basics {
+.stat {
+  font-weight: bolder
+}
+
+#user-bio {
+	width: 100%;
+	height: auto;
+  text-align: center;
+  padding: 2% 0;
+}
+
+.label {
+  height: fit-content;
+  margin: none;
+  padding: none;
+  color: grey;
+}
+
+#user-bio p {
+	color: #E6EBEE;
+	font-size: 15px;
+}
+
+.col {
   display: flex;
-  border: none;
-  background-color: #9DDAC6
+  flex-direction: column;
+  align-items: center;
+  border: solid rgb(129, 129, 129) 1.5pt;
+  margin-bottom: 3pt;
+  padding-top: 4pt;
 }
 
-#bio {
-margin: 1em;
-margin-top: 2em;
-background-color: white;
-padding: .5em;
+// #stats {
+// 	display: flex;
+// 	flex-direction: row;
+// 	height: auto;
+// 	width: 280px;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin: 0 auto;
+// 	font-weight: 500;
+// }
+
+.stat {
+	font-size: 25px;
+	margin: 0;
 }
 
-#profile_pic {
-  margin: 1em
+button:focus {
+	display: none;
 }
 
+button:hover {
+	transform: scale(1.2);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+#msg{
+	background-color: #E6EBEE;
+	color: #1f1b1b;
+}
+
+.logout {
+	display: block;
+	float: right;
+	padding: 10px 0;
+	width: 130px;
+	margin: 5%;
+  margin-bottom: 30pt;
+	border-radius: 25px;
+	border: none;
+	font-size: 20px;
+	letter-spacing: 0.2px;
+	font-weight: 400;
+	background-color: #ff4848;
+	color: #E6EBEE;
+}
 #details {
   display: flex;
   flex-direction: column;
@@ -39,21 +171,25 @@ padding: .5em;
 
 }
 
-#details > section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 1em;
-  background-color: white;
-}
-.profile-section1{
-  display: flex;
-  flex-direction: column
-}
+// #details > section {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   margin: 1em;
+//   background-color: white;
+// }
+// .profile-section1{
+//   display: flex;
+//   flex-direction: column
+// }
+// .profile-section2{
+//   display: flex;
+//   flex-direction: column
+// }
 
 
 
-//////////////////////////////@at-root
+// //////////////////////////////@at-root
 
 
 
@@ -62,7 +198,6 @@ padding: .5em;
 body,
 html {
   /* you can add overflow:hidden here to make the scrollbar disappear */
-    
     margin: 0;
     height: 100%;
     width: 100%;
@@ -118,9 +253,7 @@ z-index: 0;
 }
 
 .username {
- 
     font-size: 20pt;
-    margin: 2px
 }
 
 .profession {
@@ -139,59 +272,6 @@ z-index: 0;
     margin: 5px;
 }
 
-.button-facebook,
-.button-instagram,
-.button-twitter,
-.button-whatsapp {
-    padding: 5px;
-    font-size: 30pt;
+.name {
+  display: flex
 }
-.button-facebook {
-    color: #3C5A99;
-}
-.button-instagram {
-  color: #893dc2;
-}
-.button-twitter {
-    color: #1DA1F2;
-}
-.button-whatsapp {
-    color: #4AC959;
-}
-
-#rating-stars {
-    margin: 4px;
-}
-
-#rating-stars .stars {
-    display: inline-flex;
-  }
-  #rarate-input {
-    pointer-events: none;
-  }
-  #rating-stars .rate-input {
-    position: absolute;
-    left: -9999px;
-  }
-  #rating-stars label {
-    cursor: pointer;
-    padding: 1px;
-    font-size: 20pt;
-  }
-  #rating-stars .star-icon {
-    color: orange;
-  }
-
-  #rating-stars .rate-input:checked ~ .star-label .star-icon {
-    color: #999;
-  }
-  #rating-stars .stars:hover .star-label .star-icon {
-    color: orange;
-  }
-  #rating-stars .rate-input:hover ~ .star-label .star-icon {
-    color: #999;
-  }
-
-
-
-
