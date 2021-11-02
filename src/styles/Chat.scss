@@ -52,3 +52,24 @@ margin-top: 2em;
   margin: 0.5em
 }
 
+.enter-room {
+	display: flex;
+	padding: 10px 3%;
+	width: fit-content;
+  justify-content: space-evenly;
+	margin: 5%;
+  margin-bottom: 30pt;
+	border-radius: 25px;
+	border: none;
+	font-size: 20px;
+	letter-spacing: 0.2px;
+	font-weight: 400;
+	background-color: #ff4848;
+	color: #e6d29f;
+}
+
+.enter-room-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
