@@ -7,7 +7,7 @@ export default function Notifications(){
     <>
     {call.isReceivedCall && !callAccepted && (
       <div>
-        <h1>{name} is calling you! </h1>
+        <h1>Someone is calling you! </h1>
         <button onClick={answerCall}>Answer Call</button>
       </div>
     )}
