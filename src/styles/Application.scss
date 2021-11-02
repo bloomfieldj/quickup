@@ -60,14 +60,13 @@ button {
   font-family: Ubuntu;
   font-size: 1.2em;
   color: rgb(230, 210, 159);
-
+	font-weight: 400;
 }
 section {
   border: none;
 }
 
 #navbar_side {
-  
   display: flex;
   justify-content: space-between;
   flex-direction: row;
