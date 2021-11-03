@@ -82,7 +82,7 @@ function handleClick(event){
           
         <div class="enter-room-cont">
             <button class="start-chatting" onClick={(event) => handleClick(event)}> Start Chatting with Mystery Person #1!</button>
-            <button onClick={(event) => handleClick2(event)}> Start Chatting with Mystery Person #2!</button>
+            <button class="start-chatting" onClick={(event) => handleClick2(event)}> Start Chatting with Mystery Person #2!</button>
         </div>
           </>
         )}
