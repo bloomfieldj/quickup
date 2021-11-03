@@ -1,4 +1,23 @@
 #timer {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #ff4848;
+}
+
+
+.chatter2 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.chattersName {
+  margin-top: 0;
+  width: 60%
+}
+
+.extend :hover {
+  background-color: rgb(158, 64, 64);
+  width: 100%;
 }

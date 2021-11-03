@@ -12,8 +12,6 @@ export default function Video(props) {
   return (
     <div>
       Video Chat
-
-
       <div className="peer-video">
         {/* <h3>{name}</h3> */}
         <video id="myVideo" playsInline muted ref={myVideo} autoPlay height="400px" width="400px" />
@@ -21,11 +19,11 @@ export default function Video(props) {
 
 
       {callAccepted && !callEnded && (
-        <div>
-      <h3>{call.name}</h3>
-      <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px"/>
-      </div>
-        )}
+        <div class='chatter2'>
+          <h1 class="chattersName">{call.name}</h1>
+          <video id="theirVideo" playsInline ref={userVideo} autoPlay height="400px" width="400px" />
+        </div>
+      )}
     </div>
   )
 }
