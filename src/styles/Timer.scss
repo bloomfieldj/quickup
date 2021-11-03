@@ -5,7 +5,6 @@
   background-color: #ff4848;
 }
 
-
 .chatter2 {
   display: flex;
   flex-direction: column-reverse;
@@ -14,10 +13,20 @@
 
 .chattersName {
   margin-top: 0;
-  width: 60%
+  width: 60%;
 }
 
+.extend {
+  background-color: #dd3939;
+}
 .extend :hover {
-  background-color: rgb(158, 64, 64);
+  background-color: rgb(105, 41, 41);
+  box-shadow: inset 0 0 0 5px #300e0e;
   width: 100%;
+}
+
+.time-left {
+  font-weight: 500;
+  font-family: Ubuntu;
+  font-size: 1.3em;
 }

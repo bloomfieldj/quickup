@@ -30,7 +30,7 @@ export default function Timer(props) {
   return (
     <Fragment>
       <section id="timer">
-        <p>Time left: {timeLeft}</p>
+        <p class="time-left">Time left: {timeLeft}</p>
         <button class="extend" onClick={(event) => { event.preventDefault(); extend(); }}>Extend chat by 2 minutes!</button>
       </section>
     </Fragment >
