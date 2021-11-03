@@ -18,6 +18,7 @@
 
 .extend {
   background-color: #dd3939;
+  width: 50%;
 }
 .extend :hover {
   background-color: rgb(105, 41, 41);
@@ -26,6 +27,8 @@
 }
 
 .time-left {
+  width: 50%;
+  text-align: center;
   font-weight: 500;
   font-family: Ubuntu;
   font-size: 1.3em;
