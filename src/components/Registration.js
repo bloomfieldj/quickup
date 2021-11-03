@@ -8,7 +8,7 @@ export default function Registration(props) {
   return (
     <Fragment>
     <div className="register-components">
-      <h1> Create a profile</h1>
+      <h2> Create a profile</h2>
       <form id='profile_creator'>
         <section>
           <input type="text" className='profile_entry' name="first_name" placeholder="First Name" />
